@@ -1,4 +1,4 @@
-# bookstore
+# Bookstore
 
 <a name="readme-top"></a>
 
@@ -13,9 +13,9 @@
 
 # 📗 Table of Contents
 
-- [bookstore](#bookstore)
+- [Bookstore](#bookstore)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖Math Fans ](#math-fans-)
+- [📖Bookstore ](#bookstore-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -37,7 +37,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖Math Fans <a name="about-project"></a>
+# 📖Bookstore <a name="about-project"></a>
 
 This project will lay the foundations for my Bookstore website. I will create the user interface using React.
 
@@ -77,9 +77,8 @@ React.js
 
 ### Key Features <a name="key-features"></a>
 
-- **Make simple calculations.**
-- **Read a random math-related quote.**
-- **Fetch data from API.**
+- **Add books**
+- **Use React Router**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,7 +86,7 @@ React.js
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://warm-nasturtium-2364c6.netlify.app/)
+- [Live Demo Link](https://curious-raindrop-ebe2c8.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,12 +112,13 @@ In order to run this project you need:
 Clone this repository to your desired folder or download the Zip folder:
 
 ```
-https://github.com/Alejandroq12/math-fans.git
+https://github.com/Alejandroq12/bookstore.git
+
 ```
 
 - Navigate to the location of the folder in your machine:
 
-**``you@your-Pc-name:~$ cd group-capstone-js``**
+**``you@your-Pc-name:~$ cd bookstore``**
 
 ### Install
 
@@ -173,6 +173,7 @@ You can deploy this project using: GitHub Pages,
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **I will create a responsive website.**
+- [ ] **- **Fetch data from API.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
