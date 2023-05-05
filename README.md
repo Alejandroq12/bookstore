@@ -173,7 +173,7 @@ You can deploy this project using: GitHub Pages,
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **I will create a responsive website.**
-- [ ] **- **Fetch data from API.**
+- [ ] **Fetch data from API.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
