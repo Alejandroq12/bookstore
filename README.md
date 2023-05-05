@@ -152,7 +152,7 @@ npx eslint "**/*.{js,jsx}"
 
 You can deploy this project using: GitHub Pages,
 - I used Netlify Pages to deploy my website.
-- For more information about publishing sources, see "[Netlify](https://www.netlify.com/)".
+- For more information about deployment on Netlify see "[Netlify](https://www.netlify.com/)".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
