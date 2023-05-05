@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
@@ -7,15 +7,14 @@ import Categories from './pages/Categories';
 function App() {
   const [books, setBooks] = useState([]);
 
-  function addBook(newBook) {
+  const addBook = useCallback((newBook) => {
     const bookWithId = { ...newBook, id: Date.now() };
-    setBooks([...books, bookWithId]);
-  }
+    setBooks((prevBooks) => [...prevBooks, bookWithId]);
+  }, []);
 
-  function deleteBook(bookId) {
-    setBooks(books.filter(book => book.id !== bookId));
-  }
-  
+  const deleteBook = useCallback((bookId) => {
+    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
+  }, []);
 
   return (
     <div className="App">

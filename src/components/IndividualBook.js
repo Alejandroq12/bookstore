@@ -1,6 +1,5 @@
 import ProgressCircle from './ProgressCircle';
 
-
 function IndividualBook({ book, onDelete }) {
   return (
     <div className="individual-book">
