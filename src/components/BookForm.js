@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function BookForm({ onSubmit }) {
   const [title, setTitle] = useState('');
@@ -30,5 +31,9 @@ function BookForm({ onSubmit }) {
     </form>
   );
 }
+
+BookForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default BookForm;
