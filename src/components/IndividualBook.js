@@ -5,7 +5,7 @@ function IndividualBook({ book, onDelete }) {
   return (
     <div className="individual-book">
       <h3>{book.title}</h3>
-      <p>Author: {book.author}</p>
+      <p>{book.author}</p>
       <button>Comments</button>
       <button onClick={() => onDelete(book.id)}>Remove</button>
       <button>Edit</button>
