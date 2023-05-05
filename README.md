@@ -133,7 +133,7 @@ npm install
 To run the project, follow these instructions:
 
 - After Cloning this repo to your local machine.
-- You can also use `npm start` command in terminal to run this at the localhost.
+- You must use `npm start` command in terminal to run this at the localhost.
 
 ### Run tests
 
