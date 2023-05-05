@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "off",
+    "no-shadow": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["**/*.test.js", "**/*.spec.js", "**/setupTests.js", "src/**/*"],
+      "optionalDependencies": false,
+      "peerDependencies": false
+    }]
+  },
+  "settings": {
+    "import/core-modules": ["react-router-dom"]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*Slice.js"],
+      "rules": { "no-param-reassign": ["error", { "props": false }] }
+    }
+  ],
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
+}
