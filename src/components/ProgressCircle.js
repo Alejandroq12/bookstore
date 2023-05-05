@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 function ProgressCircle({ percentage }) {
   const radius = 25;
   const circumference = 2 * Math.PI * radius;
@@ -22,5 +25,9 @@ function ProgressCircle({ percentage }) {
     </svg>
   );
 }
+
+ProgressCircle.propTypes = {
+  percentage: PropTypes.number.isRequired,
+};
 
 export default ProgressCircle;
