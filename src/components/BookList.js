@@ -3,7 +3,7 @@ import IndividualBook from './IndividualBook';
 
 function BookList({ books, onDelete }) {
   return (
-    <div className="book-list">
+    <div>
       {books.map((book) => (
         <IndividualBook key={book.id} book={book} onDelete={onDelete} />
       ))}
@@ -14,9 +14,9 @@ function BookList({ books, onDelete }) {
 BookList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
     }),
   ).isRequired,
   onDelete: PropTypes.func.isRequired,
