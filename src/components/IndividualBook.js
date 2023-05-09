@@ -1,13 +1,21 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 import ProgressCircle from './ProgressCircle';
 
-function IndividualBook({ book, onDelete }) {
+function IndividualBook({ book }) {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(removeBook(book.item_id));
+  };
+
   return (
     <div className="individual-book">
       <h3>{book.title}</h3>
       <p>{book.author}</p>
       <button type="button">Comments</button>
-      <button type="button" onClick={() => onDelete(book.id)}>Remove</button>
+      <button type="button" onClick={handleDelete}>Remove</button>
       <button type="button">Edit</button>
       <div className="progress">
         <div className="circle" />
@@ -25,11 +33,10 @@ function IndividualBook({ book, onDelete }) {
 
 IndividualBook.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default IndividualBook;

@@ -1,27 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { addBook, removeBook } from '../redux/books/booksSlice';
 import BookList from '../components/BookList';
 import BookForm from '../components/BookForm';
 
-function HomePage({ books, onDelete, onSubmit }) {
+function HomePage() {
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  const handleAddBook = (book) => {
+    dispatch(addBook(book));
+  };
+
+  const handleRemoveBook = (bookId) => {
+    dispatch(removeBook(bookId));
+  };
+
   return (
     <div>
-      <BookList books={books} onDelete={onDelete} />
-      <BookForm onSubmit={onSubmit} />
+      <BookList books={books} onDelete={handleRemoveBook} />
+      <BookForm onSubmit={handleAddBook} />
     </div>
   );
 }
-
-HomePage.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default HomePage;
