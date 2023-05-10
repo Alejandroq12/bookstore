@@ -1,0 +1,12 @@
+.form-container {
+  width: 80%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
