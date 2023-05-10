@@ -9,7 +9,7 @@
 .navbar h1 {
   margin: 0.375rem 0 0.125rem 0;
   font-family: Monserrat, sans-serif;
-  font-size: 1.875rem;
+  font-size: 0.813rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -47,4 +47,16 @@
   height: 1.063rem;
   color: #0290ff;
   margin-top: 0.5rem;
+}
+
+/* Media queries */
+@media screen and (max-width: 480px) {
+  .navbar h1 {
+    font-size: 1.125rem;
+  }
+
+  .navbar .nav-links {
+    font-size: 0.625rem;
+    margin: 0.3rem calc(50% - 50vw + 2.3rem) 0 0;
+  }
 }
