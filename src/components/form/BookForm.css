@@ -17,3 +17,17 @@
   border-radius: 4px;
   font-size: 1rem;
 }
+
+.form-submit {
+  padding: 0.5rem 1rem;
+  background-color: #0290ff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #0272c4;
+}
