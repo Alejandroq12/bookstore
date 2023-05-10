@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, deleteBook } from '../redux/books/booksSlice';
 import BookList from '../components/BookList';
-import BookForm from '../components/BookForm';
+import BookForm from '../components/form/BookForm';
 
 function HomePage() {
   const dispatch = useDispatch();
