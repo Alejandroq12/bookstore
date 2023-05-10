@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   background-color: #fff;
+  border: solid 1px #e8e8e8;
 }
 
 .navbar h1 {
@@ -26,7 +27,6 @@
 }
 
 .navbar .nav-link {
-  height: 1rem;
   font-family: Monserrat, sans-serif;
   font-size: 0.913rem;
   font-weight: normal;
@@ -43,8 +43,8 @@
 }
 
 .icon {
-  width: 1.063rem;
-  height: 1.063rem;
+  width: 2.063rem;
+  height: 2.063rem;
   color: #0290ff;
   margin-top: 0.5rem;
 }
@@ -70,7 +70,7 @@
   .navbar .nav-links {
     font-size: 0.875rem;
     gap: 1.875rem;
-    margin: 0.3rem calc(115% - 50vw + 2.3rem) 0 0;
+    margin: 0.3rem calc(110% - 50vw + 2.3rem) 0 0;
   }
 }
 
@@ -82,7 +82,7 @@
   .navbar .nav-links {
     font-size: 0.813rem;
     gap: 1.563rem;
-    margin: 0.3rem calc(105% - 50vw + 2.3rem) 0 0;
+    margin: 0.3rem calc(98% - 50vw + 2.3rem) 0 0;
   }
 }
 
@@ -93,7 +93,7 @@
 
   .navbar .nav-links {
     font-size: 0.75rem;
-    margin: 0.3rem calc(50% - 50vw + 20.3rem) 0 0;
+    margin: 0.3rem calc(47% - 50vw + 20.3rem) 0 0;
   }
 }
 
@@ -110,11 +110,23 @@
 
 @media screen and (max-width: 480px) {
   .navbar h1 {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .navbar .nav-links {
     font-size: 0.625rem;
     margin: 0.3rem calc(50% - 50vw + 2.3rem) 0 0;
+  }
+
+  .icon {
+    width: 1.063rem;
+    height: 1.063rem;
+    color: #0290ff;
+    margin-top: 0.5rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.613rem;
+    letter-spacing: 1.7px;
   }
 }
