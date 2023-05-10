@@ -39,6 +39,15 @@
   margin-right: 1rem;
 }
 
+.current-chapter button {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+}
+
 .book-info button:focus {
   outline: none;
 }
@@ -51,15 +60,6 @@
 .current-chapter {
   gap: 0.5rem;
   align-items: flex-start;
-}
-
-.current-chapter button {
-  background-color: #0290ff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  padding: 0.5rem 1.5rem;
 }
 
 .current-chapter button:focus {
