@@ -31,3 +31,9 @@
 .form-submit:hover {
   background-color: #0272c4;
 }
+
+.separator {
+  border: 0;
+  border-top: 1px solid #e8e8e8;
+  margin: 0 0 2rem 0;
+}
