@@ -19,41 +19,79 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   return [];
 });
 
-export const createBook = createAsyncThunk('books/createBook', async (newBook) => {
-  const itemId = Date.now().toString();
-  await api.post(`${apiUrl}books`, {
-    item_id: itemId,
-    ...newBook,
-  }, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  return { ...newBook, id: itemId };
-});
-
-export const deleteBook = createAsyncThunk('books/deleteBook', async (bookId) => {
-  await api.delete(`${apiUrl}books/${bookId}`);
-  return bookId;
-});
-
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    updateBookId: (state, action) => {
+      const { itemId, bookId } = action.payload;
+      const bookIndex = state.findIndex((book) => book.item_id === itemId);
+      if (bookIndex !== -1) {
+        state[bookIndex].id = bookId;
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBooks.fulfilled, (state, action) => action.payload)
-      .addCase(createBook.fulfilled, (state, action) => {
-        state.push(action.payload);
-      })
-      .addCase(deleteBook.fulfilled, (state, action) => {
-        const index = state.findIndex((book) => book.id === action.payload);
-        if (index !== -1) {
-          state.splice(index, 1);
-        }
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        state.splice(0, state.length, ...action.payload);
       });
   },
 });
+
+const { updateBookId } = booksSlice.actions;
+
+export const createBook = createAsyncThunk(
+  'books/createBook',
+  async (newBook, { dispatch }) => {
+    const itemId = Date.now().toString();
+    const response = await api.post(
+      `${apiUrl}books`,
+      {
+        item_id: itemId,
+        ...newBook,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const bookId = response.headers['x-id'];
+
+    dispatch(updateBookId({ itemId, bookId }));
+
+    dispatch(fetchBooks());
+
+    return { ...newBook, id: bookId, item_id: itemId };
+  },
+);
+
+export const deleteBook = createAsyncThunk(
+  'books/deleteBook',
+  async (bookId, { dispatch }) => {
+    await api.delete(`${apiUrl}books/${bookId}`);
+
+    dispatch(fetchBooks());
+
+    return { bookId };
+  },
+);
+
+booksSlice.extraReducers = (builder) => {
+  builder
+    .addCase(createBook.fulfilled, (state, action) => {
+      state.push(action.payload);
+    })
+    .addCase(deleteBook.fulfilled, (state, action) => {
+      const index = state.findIndex(
+        (book) => book.id === action.payload.bookId,
+      );
+      if (index !== -1) {
+        state.splice(index, 1);
+      }
+    });
+};
 
 export default booksSlice.reducer;
