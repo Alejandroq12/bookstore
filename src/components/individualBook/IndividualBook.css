@@ -17,6 +17,19 @@
   flex-wrap: wrap;
 }
 
+.category {
+  opacity: 0.5;
+  margin: 0 2.438rem 0 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
 .book-info,
 .progress,
 .current-chapter {

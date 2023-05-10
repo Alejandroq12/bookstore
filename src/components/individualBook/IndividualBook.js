@@ -16,7 +16,7 @@ function IndividualBook({ book, onDelete }) {
     <div className="individual-book-wrapper">
       <div className="individual-book">
         <div className="book-info">
-          <p>{category}</p>
+          <p className="category">{category}</p>
           <h3>{title}</h3>
           <p>{author}</p>
           <div className="buttons">
