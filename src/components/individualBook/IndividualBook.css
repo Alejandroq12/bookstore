@@ -16,3 +16,52 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.book-info,
+.progress,
+.current-chapter {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-info {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  gap: 0.5rem;
+}
+
+.book-info button {
+  background: none;
+  border: none;
+  color: #4386bf;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.book-info button:focus {
+  outline: none;
+}
+
+.progress {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.current-chapter {
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.current-chapter button {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+}
+
+.current-chapter button:focus {
+  outline: none;
+}
