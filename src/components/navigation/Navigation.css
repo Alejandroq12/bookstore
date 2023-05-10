@@ -18,3 +18,26 @@
   color: #0290ff;
   text-align: center;
 }
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.563rem;
+  margin: 0.3rem calc(50% - 50vw + 2.3rem) 0 0;
+}
+
+.navbar .nav-link {
+  height: 1rem;
+  font-family: Monserrat, sans-serif;
+  font-size: 0.913rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-decoration: none;
+}
+
+.navbar .nav-link.categories {
+  opacity: 0.5;
+}
