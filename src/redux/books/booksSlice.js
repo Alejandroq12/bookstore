@@ -30,6 +30,14 @@ const booksSlice = createSlice({
         state[bookIndex].id = bookId;
       }
     },
+    removeBook: (state, action) => {
+      const index = action.payload;
+      state.splice(index, 1);
+    },
+    undoRemoveBook: (state, action) => {
+      const { index, book } = action.payload;
+      state.splice(index, 0, book);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -70,12 +78,22 @@ export const createBook = createAsyncThunk(
 
 export const deleteBook = createAsyncThunk(
   'books/deleteBook',
-  async (bookId, { dispatch }) => {
-    await api.delete(`${apiUrl}books/${bookId}`);
+  async (bookId, { getState, dispatch }) => {
+    const index = getState().books.findIndex((book) => book.id === bookId);
+    if (index === -1) {
+      throw new Error('Book not found');
+    }
 
-    dispatch(fetchBooks());
+    const removedBook = getState().books[index];
+    dispatch(booksSlice.actions.removeBook(index));
 
-    return { bookId };
+    try {
+      await api.delete(`${apiUrl}books/${bookId}`);
+      return { bookId };
+    } catch (error) {
+      dispatch(booksSlice.actions.undoRemoveBook({ index, book: removedBook }));
+      throw error;
+    }
   },
 );
 
