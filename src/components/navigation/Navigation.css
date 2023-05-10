@@ -50,6 +50,17 @@
 }
 
 /* Media queries */
+@media screen and (max-width: 1024px) {
+  .navbar h1 {
+    font-size: 1.625rem;
+  }
+
+  .navbar .nav-links {
+    font-size: 0.75rem;
+    margin: 0.3rem calc(50% - 50vw + 20.3rem) 0 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navbar h1 {
     font-size: 1.375rem;
