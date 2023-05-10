@@ -13,27 +13,31 @@ function IndividualBook({ book, onDelete }) {
   };
 
   return (
-    <div>
-      <div>
-        <p>{category}</p>
-        <h3>{title}</h3>
-        <p>{author}</p>
-        <button type="button">Comments</button>
-        <button type="submit" onClick={handleDelete}>
-          Remove Book
-        </button>
-        <button type="button">Edit</button>
-      </div>
+    <div className="individual-book-wrapper">
+      <div className="individual-book">
+        <div className="book-info">
+          <p>{category}</p>
+          <h3>{title}</h3>
+          <p>{author}</p>
+          <div className="buttons">
+            <button type="button">Comments</button>
+            <button type="submit" onClick={handleDelete}>
+              Remove Book
+            </button>
+            <button type="button">Edit</button>
+          </div>
+        </div>
 
-      <div className="progress">
-        <div className="circle" />
-        <ProgressCircle percentage={64} />
-        <span>64% Completed</span>
-      </div>
-      <div className="current-chapter">
-        <h4>Current Chapter</h4>
-        <p>Chapter 3 of 5</p>
-        <button type="button">UPDATE PROGRESS</button>
+        <div className="progress">
+          <div className="circle" />
+          <ProgressCircle percentage={64} />
+          <span>64% Completed</span>
+        </div>
+        <div className="current-chapter">
+          <h4>Current Chapter</h4>
+          <p>Chapter 3 of 5</p>
+          <button type="button">UPDATE PROGRESS</button>
+        </div>
       </div>
     </div>
   );
