@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProgressCircle from './ProgressCircle';
+import ProgressCircle from '../ProgressCircle';
+import './IndividualBook.css';
 
 function IndividualBook({ book, onDelete }) {
   const {

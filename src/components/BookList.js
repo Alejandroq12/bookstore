@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import IndividualBook from './IndividualBook';
+import IndividualBook from './individualBook/IndividualBook';
 
 function BookList({ books, onDelete }) {
   return (
