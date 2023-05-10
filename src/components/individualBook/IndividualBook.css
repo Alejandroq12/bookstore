@@ -1,0 +1,18 @@
+.individual-book {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-bottom: 1.5rem;
+  justify-items: center;
+  width: 80%;
+  margin-top: 2.3rem;
+}
+
+.individual-book-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
