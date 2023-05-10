@@ -5,3 +5,16 @@
   padding: 0.5rem 1rem;
   background-color: #fff;
 }
+
+.navbar h1 {
+  margin: 0.375rem 0 0.125rem 0;
+  font-family: Monserrat, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+  text-align: center;
+}
