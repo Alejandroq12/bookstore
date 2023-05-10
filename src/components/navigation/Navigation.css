@@ -41,3 +41,10 @@
 .navbar .nav-link.categories {
   opacity: 0.5;
 }
+
+.icon {
+  width: 1.063rem;
+  height: 1.063rem;
+  color: #0290ff;
+  margin-top: 0.5rem;
+}
