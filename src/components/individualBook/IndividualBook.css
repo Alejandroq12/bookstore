@@ -125,8 +125,46 @@
 }
 
 .progress {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-direction: row;
+  position: relative;
+}
+
+.percentage-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.1rem 0 0 0.7rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.completed {
+  opacity: 0.5;
+}
+
+.percentage-number {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: -2.3rem;
+  margin-left: -0.8rem;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
 .current-chapter {
