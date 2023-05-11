@@ -44,9 +44,9 @@ function IndividualBook({ book, onDelete }) {
         </div>
 
         <div className="current-chapter">
-          <h4>Current Chapter</h4>
-          <p>Chapter 3 of 5</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <h4 className="chapter">CURRENT CHAPTER</h4>
+          <p className="chapter-number">Chapter 17</p>
+          <button type="button"><span className="update-progress">UPDATE PROGRESS</span></button>
         </div>
       </div>
     </div>

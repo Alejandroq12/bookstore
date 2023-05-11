@@ -87,13 +87,66 @@
   opacity: 0.6;
 }
 
+.chapter {
+  opacity: 0.4;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter-number {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin: 0.4rem 0 0.4rem 0;
+}
+
+.current-chapter {
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.current-chapter::after {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 1px;
+  background-color: #e8e8e8;
+  left: -6rem;
+  top: 0;
+}
+
 .current-chapter button {
   background-color: #0290ff;
-  color: #fff;
   border: none;
   cursor: pointer;
-  font-weight: bold;
   padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.update-progress {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  opacity: 0.6;
 }
 
 .book-info button:focus {
@@ -104,7 +157,7 @@
   position: relative;
 }
 
-.buttons button[type="button"]:first-child::after {
+.buttons button[type='button']:first-child::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -114,7 +167,7 @@
   top: 0;
 }
 
-.buttons button[type="button"]:last-child::after {
+.buttons button[type='button']:last-child::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -175,6 +228,30 @@
 }
 
 /* Media Queries */
+@media screen and (max-width: 1450px), screen and (max-width: 1024px) {
+  .current-chapter::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #e8e8e8;
+    left: -2.3rem;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .current-chapter::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #e8e8e8;
+    left: -1rem;
+    top: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .individual-book {
     grid-template-columns: 1fr 1fr 1fr;
@@ -232,5 +309,9 @@
 
   .current-chapter button {
     padding: 0.5rem 1rem;
+  }
+
+  .current-chapter::after {
+    display: none;
   }
 }
