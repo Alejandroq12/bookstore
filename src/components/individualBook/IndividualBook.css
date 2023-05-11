@@ -74,10 +74,17 @@
 .book-info button {
   background: none;
   border: none;
-  color: #4386bf;
+  font-family: RobotoSlab, sans-serif;
   cursor: pointer;
-  font-weight: bold;
-  margin-right: 1rem;
+  margin-right: 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  opacity: 0.6;
 }
 
 .current-chapter button {
@@ -91,6 +98,30 @@
 
 .book-info button:focus {
   outline: none;
+}
+
+.buttons {
+  position: relative;
+}
+
+.buttons button[type="button"]:first-child::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border: solid 1px #e8e8e8;
+  right: 47px;
+  top: 0;
+}
+
+.buttons button[type="button"]:last-child::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border: solid 1px #e8e8e8;
+  left: 75px;
+  top: 0;
 }
 
 .progress {

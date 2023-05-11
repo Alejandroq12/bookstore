@@ -20,11 +20,11 @@ function IndividualBook({ book, onDelete }) {
           <h3 className="book-title">{title}</h3>
           <p className="author">{author}</p>
           <div className="buttons">
-            <button type="button">Comments</button>
-            <button type="submit" onClick={handleDelete}>
+            <button className="comments" type="button">Comments</button>
+            <button className="remove" type="button" onClick={handleDelete}>
               Remove Book
             </button>
-            <button type="button">Edit</button>
+            <button className="edit" type="button">Edit</button>
           </div>
         </div>
 
