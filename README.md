@@ -86,7 +86,7 @@ React.js
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://curious-raindrop-ebe2c8.netlify.app/)
+- [Live Demo Link](https://candid-quokka-8e7e31.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
