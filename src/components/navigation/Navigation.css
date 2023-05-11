@@ -51,82 +51,126 @@
 
 /* Media queries */
 @media screen and (min-width: 1920px) {
+  .navbar {
+    padding: 0 12rem 0 12.1rem;
+    height: 6rem;
+  }
+
   .navbar h1 {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
   }
 
   .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 75rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
     font-size: 1rem;
-    gap: 2rem;
-    margin: 0.3rem calc(115% - 50vw + 2.3rem) 0 0;
   }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .navbar {
+    padding: 0 9rem 0 9.1rem;
+    height: 6rem;
+  }
+
   .navbar h1 {
-    font-size: 2.125rem;
+    font-size: 1.6rem;
   }
 
   .navbar .nav-links {
-    font-size: 0.875rem;
-    gap: 1.875rem;
-    margin: 0.3rem calc(110% - 50vw + 2.3rem) 0 0;
+    margin: 0.3rem calc(50% - 50vw + 50rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 1rem;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .navbar {
+    padding: 0 6.5rem 0 7rem;
+    height: 6rem;
+  }
+
   .navbar h1 {
-    font-size: 1.875rem;
+    font-size: 1.6rem;
   }
 
   .navbar .nav-links {
-    font-size: 0.813rem;
-    gap: 1.563rem;
-    margin: 0.3rem calc(98% - 50vw + 2.3rem) 0 0;
+    margin: 0.3rem calc(50% - 50vw + 28rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0 5rem 0 5rem;
+    height: 6rem;
+  }
+
   .navbar h1 {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
   }
 
   .navbar .nav-links {
-    font-size: 0.75rem;
-    margin: 0.3rem calc(47% - 50vw + 20.3rem) 0 0;
+    margin: 0.3rem calc(50% - 50vw + 15rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.9rem;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 3rem 0 3.2rem;
+    height: 6rem;
+  }
+
   .navbar h1 {
-    font-size: 1.375rem;
+    font-size: 1.3rem;
   }
 
   .navbar .nav-links {
-    font-size: 0.688rem;
-    margin: 0.3rem calc(50% - 50vw + 7rem) 0 0;
+    margin: 0.3rem calc(50% - 50vw + 3.8rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.7rem;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 2.3rem 0 2.5rem;
+    height: 4rem;
+  }
+
   .navbar h1 {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 
   .navbar .nav-links {
-    font-size: 0.625rem;
-    margin: 0.3rem calc(50% - 50vw + 2.3rem) 0 0;
+    margin: 0.3rem calc(50% - 50vw + 5.2rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.5rem;
   }
 
   .icon {
-    width: 1.063rem;
-    height: 1.063rem;
-    color: #0290ff;
-    margin-top: 0.5rem;
-  }
-
-  .navbar .nav-link {
-    font-size: 0.613rem;
-    letter-spacing: 1.7px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
