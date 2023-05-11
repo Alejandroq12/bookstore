@@ -1,0 +1,78 @@
+:root {
+  --main-font: montserrat, sans-serif;
+  --secondary-font: robotoslab, sans-serif;
+  --primary-color: #0290ff;
+  --secondary-color: #888;
+  --border-color: #ccc;
+  --separator-color: #e8e8e8;
+}
+
+.form-container {
+  width: 80%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: var(--main-font);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.form-input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-submit {
+  width: 11.5rem;
+  height: 2.813rem;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.add-book {
+  font-family: var(--secondary-font);
+  font-size: 0.813rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.form-submit:hover {
+  background-color: #0272c4;
+}
+
+.separator {
+  border: 0;
+  border-top: 1px solid var(--separator-color);
+  margin: 0 0 2rem 0;
+}
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+  .book-form {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .form-input {
+    flex: 1;
+    margin-right: 1rem;
+    width: 100%;
+  }
+}

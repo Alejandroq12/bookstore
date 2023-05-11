@@ -1,0 +1,188 @@
+body,
+button,
+input,
+textarea {
+  font-family: Monserrat, sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+:root {
+  --main-color: #0290ff;
+  --secondary-color: #121212;
+  --border-color: #e8e8e8;
+  --white-color: #fff;
+  --categories-opacity: 0.5;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: solid 1px var(--border-color);
+}
+
+.navbar h1 {
+  margin: 0.375rem 0 0.125rem 0;
+  font-size: 0.813rem;
+  font-weight: bold;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.563rem;
+  margin: 0.3rem calc(50% - 50vw + 2.3rem) 0 0;
+}
+
+.navbar .nav-link {
+  font-size: 0.913rem;
+  font-weight: normal;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.navbar .nav-link.categories {
+  opacity: var(--categories-opacity);
+}
+
+.icon {
+  width: 2.063rem;
+  height: 2.063rem;
+  color: var(--white-color);
+  background-color: var(--main-color);
+  border-radius: 55%;
+  margin-top: 0.5rem;
+  border: solid 1px var(--border-color);
+}
+
+/* Media queries */
+@media screen and (min-width: 1920px) {
+  .navbar {
+    padding: 0 12rem 0 12.1rem;
+    height: 6rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.7rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 75rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .navbar {
+    padding: 0 9rem 0 9.1rem;
+    height: 6rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.6rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 50rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .navbar {
+    padding: 0 6.5rem 0 7rem;
+    height: 6rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.6rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 28rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0 5rem 0 5rem;
+    height: 6rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 15rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 3rem 0 3.2rem;
+    height: 6rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 3.8rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 2.3rem 0 2.5rem;
+    height: 4rem;
+  }
+
+  .navbar h1 {
+    font-size: 0.6rem;
+  }
+
+  .navbar .nav-links {
+    margin: 0.3rem calc(50% - 50vw + 5.2rem) 0 0;
+  }
+
+  .nav-link.nav-link.categories,
+  .nav-link.nav-link.books {
+    font-size: 0.5rem;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

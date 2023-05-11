@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, deleteBook } from '../redux/books/booksSlice';
 import BookList from '../components/BookList';
-import BookForm from '../components/BookForm';
+import BookForm from '../components/form/BookForm';
 
 function HomePage() {
   const dispatch = useDispatch();
-  const books = useSelector((state) => Object.entries(state.books).map(([id, bookData]) => ({
-    id,
-    ...bookData,
-  })));
+  const books = useSelector((state) => state.books);
+
+  const sortedBooks = [...books].sort((a, b) => a.title.localeCompare(b.title));
 
   useEffect(() => {
     dispatch(fetchBooks());
@@ -21,7 +20,7 @@ function HomePage() {
 
   return (
     <div>
-      <BookList books={books} onDelete={handleDelete} />
+      <BookList books={sortedBooks} onDelete={(id) => handleDelete(id)} />
       <BookForm />
     </div>
   );
