@@ -54,7 +54,7 @@ function BookForm() {
             className="form-input"
           />
           <button type="submit" className="form-submit">
-            Add Book
+            <span className="add-book">ADD BOOK</span>
           </button>
         </form>
       </div>
