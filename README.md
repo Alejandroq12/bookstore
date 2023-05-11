@@ -39,13 +39,15 @@
 
 # 📖Bookstore <a name="about-project"></a>
 
-This project will lay the foundations for my Bookstore website. I will create the user interface using React.
+A modern, responsive bookstore application built with React, Redux, and a bookstore API. The app allows users to browse, add, and remove books, showcasing efficient state management and real-time data handling.
 
 ## 🛠 Built With <a name="built-with"></a>
 HTML,
 CSS,
 JavaScript,
-React.js
+React.js,
+Redux Toolkit,
+Axios.
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -56,6 +58,8 @@ React.js
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
     <li><a href="https://react.dev/">React.js</a></li>
+    <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+    <li><a href="https://axios-http.com/docs/intro">Axios</a></li>
   </ul>
 </details>
 
@@ -77,8 +81,10 @@ React.js
 
 ### Key Features <a name="key-features"></a>
 
-- **Add books**
-- **Use React Router**
+- **Responsive design**
+- **Browse, add, and remove books from the collection**
+- **State management with Redux Toolkit**
+- **API integration with a bookstore API**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,8 +178,8 @@ You can deploy this project using: GitHub Pages,
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **I will create a responsive website.**
-- [ ] **Fetch data from API.**
+- [ ] **I will implement more pages**
+- [ ] **I will create statistics acordding to individual users**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
