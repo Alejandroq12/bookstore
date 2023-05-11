@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProgressCircle from '../progress/ProgressCircle';
+import CommentsModal from '../comments/CommentsModal';
 import './IndividualBook.css';
 
 function IndividualBook({ book, onDelete }) {
   const {
     id, title, author, category,
   } = book;
+
+  const [showCommentsModal, setShowCommentsModal] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [updatedProgress, setUpdatedProgress] = useState(null);
+  const [progressPercentage, setProgressPercentage] = useState(0);
+  const [currentChapter, setCurrentChapter] = useState(0);
+  const [updatedChapter, setUpdatedChapter] = useState(null);
+
+  useEffect(() => {
+    const savedProgress = localStorage.getItem(`bookProgress-${id}`);
+    if (savedProgress) {
+      setProgressPercentage(parseInt(savedProgress, 10));
+    } else {
+      setProgressPercentage(64);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    const savedChapter = localStorage.getItem(`bookChapter-${id}`);
+    if (savedChapter) {
+      setCurrentChapter(parseInt(savedChapter, 10));
+    } else {
+      setCurrentChapter(book.currentChapter || 0);
+    }
+  }, [id, book.currentChapter]);
+
+  const handleEdit = () => {
+    setEditMode(true);
+  };
+
+  const handleUpdateProgress = () => {
+    localStorage.setItem(`bookProgress-${id}`, updatedProgress);
+    setProgressPercentage(parseInt(updatedProgress, 10));
+    localStorage.setItem(`bookChapter-${id}`, updatedChapter);
+    setCurrentChapter(parseInt(updatedChapter, 10));
+    setEditMode(false);
+  };
+
+  const handleShowCommentsModal = () => {
+    setShowCommentsModal(true);
+  };
+
+  const handleCloseCommentsModal = () => {
+    setShowCommentsModal(false);
+  };
 
   const handleDelete = () => {
     onDelete(id);
@@ -20,34 +66,70 @@ function IndividualBook({ book, onDelete }) {
           <h3 className="book-title">{title}</h3>
           <p className="author">{author}</p>
           <div className="buttons">
-            <button className="comments" type="button">
+            <button className="comments" type="button" onClick={handleShowCommentsModal}>
               Comments
             </button>
             <button className="remove" type="button" onClick={handleDelete}>
               Remove Book
             </button>
-            <button className="edit" type="button">
+            <button className="edit" type="button" onClick={handleEdit}>
               Edit
             </button>
           </div>
         </div>
-
+        <CommentsModal
+          show={showCommentsModal}
+          onClose={handleCloseCommentsModal}
+          bookId={id}
+        />
         <div className="progress">
           <div className="circle" />
-          <ProgressCircle percentage={64} />
+          <ProgressCircle percentage={progressPercentage} />
           <div className="percentage-text">
             <div className="percentage-number">
-              <span>64%</span>
+              <span>
+                {progressPercentage}
+                %
+              </span>
             </div>
             <span className="completed">Completed</span>
           </div>
         </div>
 
         <div className="current-chapter">
-          <h4 className="chapter">CURRENT CHAPTER</h4>
-          <p className="chapter-number">Chapter 17</p>
-          <button type="button"><span className="update-progress">UPDATE PROGRESS</span></button>
+          {editMode ? (
+            <>
+              <input
+                type="number"
+                value={updatedProgress || ''}
+                onChange={(e) => setUpdatedProgress(e.target.value)}
+                placeholder="Enter updated progress"
+              />
+              <input
+                type="number"
+                value={updatedChapter || ''}
+                onChange={(e) => setUpdatedChapter(e.target.value)}
+                placeholder="Enter updated chapter"
+              />
+              <button type="button" onClick={handleUpdateProgress}>
+                <span className="update-progress">Save Progress</span>
+              </button>
+            </>
+          ) : (
+            <>
+              <h4 className="chapter">CURRENT PAGE</h4>
+              <p className="chapter-number">
+                Page &nbsp;
+                {currentChapter}
+              </p>
+
+              <button type="button" onClick={handleEdit}>
+                <span className="update-progress">UPDATE PROGRESS</span>
+              </button>
+            </>
+          )}
         </div>
+
       </div>
     </div>
   );
@@ -59,6 +141,8 @@ IndividualBook.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    currentChapter: PropTypes.number.isRequired,
+    totalChapters: PropTypes.number.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
