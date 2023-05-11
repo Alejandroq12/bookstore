@@ -153,11 +153,9 @@
 
 .percentage-number {
   position: absolute;
-  font-weight: bold;
-  font-size: 1.25rem;
   margin-top: -2.3rem;
   margin-left: -0.8rem;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
