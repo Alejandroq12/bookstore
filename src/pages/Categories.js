@@ -1,8 +1,10 @@
+import CategoryGrid from '../components/category/CategoryGrid';
+
 function Categories() {
   return (
     <div>
       <h2>Categories</h2>
-      {/* I will add categories here */}
+      <CategoryGrid />
     </div>
   );
 }
