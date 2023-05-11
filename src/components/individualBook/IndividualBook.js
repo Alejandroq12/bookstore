@@ -18,7 +18,7 @@ function IndividualBook({ book, onDelete }) {
         <div className="book-info">
           <p className="category">{category}</p>
           <h3 className="book-title">{title}</h3>
-          <p>{author}</p>
+          <p className="author">{author}</p>
           <div className="buttons">
             <button type="button">Comments</button>
             <button type="submit" onClick={handleDelete}>
