@@ -111,22 +111,6 @@
   margin: 0.4rem 0 0.4rem 0;
 }
 
-.current-chapter {
-  gap: 0.5rem;
-  align-items: flex-start;
-  position: relative;
-}
-
-.current-chapter::after {
-  content: '';
-  position: absolute;
-  height: 70%;
-  width: 1px;
-  background-color: #e8e8e8;
-  left: -6rem;
-  top: 0;
-}
-
 .current-chapter button {
   background-color: #0290ff;
   border: none;
@@ -221,6 +205,17 @@
 .current-chapter {
   gap: 0.5rem;
   align-items: flex-start;
+  position: relative;
+}
+
+.current-chapter::after {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 1px;
+  background-color: #e8e8e8;
+  left: -6rem;
+  top: 0;
 }
 
 .current-chapter button:focus {
