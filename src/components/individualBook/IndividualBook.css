@@ -181,3 +181,56 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .individual-book {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .individual-book-wrapper {
+    padding: 0 1rem;
+  }
+
+  .book-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .author {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .category {
+    text-align: center;
+  }
+
+  .book-info button {
+    font-size: 0.8rem;
+  }
+
+  .progress {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .percentage-text {
+    margin: 1rem 0;
+  }
+
+  .percentage-number {
+    margin-top: -1.5rem;
+    margin-left: -0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .current-chapter {
+    align-items: center;
+    text-align: center;
+  }
+
+  .current-chapter button {
+    padding: 0.5rem 1rem;
+  }
+}
