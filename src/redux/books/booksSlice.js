@@ -9,12 +9,16 @@ const apiUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/books
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await api.get(`${apiUrl}books`);
   if (response.data) {
-    return Object.entries(response.data).map(([id, bookData]) => ({
-      id,
-      title: bookData[0].title,
-      author: bookData[0].author,
-      category: bookData[0].category,
-    }));
+    const sortedBooks = Object.entries(response.data)
+      .map(([id, bookData]) => ({
+        id,
+        title: bookData[0].title,
+        author: bookData[0].author,
+        category: bookData[0].category,
+        createdAt: bookData[0].createdAt,
+      }))
+      .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    return sortedBooks;
   }
   return [];
 });
@@ -57,6 +61,7 @@ export const createBook = createAsyncThunk(
       `${apiUrl}books`,
       {
         item_id: itemId,
+        createdAt: new Date().toISOString(),
         ...newBook,
       },
       {
