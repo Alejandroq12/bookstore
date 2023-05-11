@@ -13,6 +13,7 @@ textarea {
   --main-color: #0290ff;
   --secondary-color: #121212;
   --border-color: #e8e8e8;
+  --white-color: #fff;
   --categories-opacity: 0.5;
 }
 
@@ -53,8 +54,11 @@ textarea {
 .icon {
   width: 2.063rem;
   height: 2.063rem;
-  color: var(--main-color);
+  color: var(--white-color);
+  background-color: var(--main-color);
+  border-radius: 55%;
   margin-top: 0.5rem;
+  border: solid 1px var(--border-color);
 }
 
 /* Media queries */
