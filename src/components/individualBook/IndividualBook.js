@@ -42,6 +42,10 @@ function IndividualBook({ book, onDelete }) {
       localStorage.setItem(`bookProgress-${id}`, updatedProgress);
       setProgressPercentage(parseInt(updatedProgress, 10));
     }
+    if (updatedChapter) {
+      localStorage.setItem(`bookChapter-${id}`, updatedChapter);
+      setCurrentChapter(parseInt(updatedChapter, 10));
+    }
   };
 
   const handleShowCommentsModal = () => {
