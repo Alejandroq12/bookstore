@@ -37,13 +37,11 @@ function IndividualBook({ book, onDelete }) {
   const handleEdit = () => {
     setEditMode(true);
   };
-
   const handleUpdateProgress = () => {
-    localStorage.setItem(`bookProgress-${id}`, updatedProgress);
-    setProgressPercentage(parseInt(updatedProgress, 10));
-    localStorage.setItem(`bookChapter-${id}`, updatedChapter);
-    setCurrentChapter(parseInt(updatedChapter, 10));
-    setEditMode(false);
+    if (updatedProgress) {
+      localStorage.setItem(`bookProgress-${id}`, updatedProgress);
+      setProgressPercentage(parseInt(updatedProgress, 10));
+    }
   };
 
   const handleShowCommentsModal = () => {
@@ -66,7 +64,11 @@ function IndividualBook({ book, onDelete }) {
           <h3 className="book-title">{title}</h3>
           <p className="author">{author}</p>
           <div className="buttons">
-            <button className="comments" type="button" onClick={handleShowCommentsModal}>
+            <button
+              className="comments"
+              type="button"
+              onClick={handleShowCommentsModal}
+            >
               Comments
             </button>
             <button className="remove" type="button" onClick={handleDelete}>
@@ -129,7 +131,6 @@ function IndividualBook({ book, onDelete }) {
             </>
           )}
         </div>
-
       </div>
     </div>
   );
