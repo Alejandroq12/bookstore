@@ -109,7 +109,7 @@ function IndividualBook({ book, onDelete }) {
                 type="number"
                 value={updatedChapter || ''}
                 onChange={(e) => setUpdatedChapter(e.target.value)}
-                placeholder="Enter updated chapter"
+                placeholder="Enter updated page"
               />
               <button type="button" onClick={handleUpdateProgress}>
                 <span className="update-progress">Save Progress</span>
