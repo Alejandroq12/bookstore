@@ -46,6 +46,7 @@ function IndividualBook({ book, onDelete }) {
       localStorage.setItem(`bookChapter-${id}`, updatedChapter);
       setCurrentChapter(parseInt(updatedChapter, 10));
     }
+    setEditMode(false);
   };
 
   const handleShowCommentsModal = () => {
