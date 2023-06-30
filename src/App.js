@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ParticlesBg from 'particles-bg';
 import Navigation from './components/navigation/Navigation';
 import HomePage from './pages/HomePage';
 import Categories from './pages/categories/Categories';
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <ParticlesBg num={300} type="cobweb" bg />
       <BrowserRouter>
         <Navigation />
         <Routes>

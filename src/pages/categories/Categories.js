@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ParticlesBg from 'particles-bg';
 import { useSelector } from 'react-redux';
 import './Categories.css';
 import BookList from '../../components/BookList';
@@ -37,7 +36,6 @@ function Categories() {
           ))}
         </select>
       </div>
-      <ParticlesBg type="cobweb" bg />
       <BookList books={filteredBooks} />
     </div>
   );

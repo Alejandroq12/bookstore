@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ParticlesBg from 'particles-bg';
 import { fetchBooks, deleteBook } from '../redux/books/booksSlice';
 import BookList from '../components/BookList';
 import BookForm from '../components/form/BookForm';
@@ -21,7 +20,6 @@ function HomePage() {
 
   return (
     <div>
-      <ParticlesBg type="cobweb" bg />
       <BookList books={sortedBooks} onDelete={(id) => handleDelete(id)} />
       <BookForm />
     </div>
