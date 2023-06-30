@@ -39,8 +39,12 @@ function IndividualBook({ book, onDelete }) {
   };
   const handleUpdateProgress = () => {
     if (updatedProgress) {
-      localStorage.setItem(`bookProgress-${id}`, updatedProgress);
-      setProgressPercentage(parseInt(updatedProgress, 10));
+      let progress = parseInt(updatedProgress, 10);
+      // Ensure progress doesn't exceed 100
+      progress = progress > 100 ? 100 : progress;
+
+      localStorage.setItem(`bookProgress-${id}`, progress);
+      setProgressPercentage(progress);
     }
     if (updatedChapter) {
       localStorage.setItem(`bookChapter-${id}`, updatedChapter);
