@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <ParticlesBg num={300} type="cobweb" bg />
+      <ParticlesBg num={90} type="cobweb" bg />
       <BrowserRouter>
         <Navigation />
         <Routes>
