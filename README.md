@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="./public/logo.png" alt="logo" width="550"  height="auto" />
+    <img src="./public/logo.png" alt="logo" width="700"  height="auto" />
   <br/>
   <h3><b>The Bookstore</b></h3>
 
