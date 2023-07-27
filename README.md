@@ -5,9 +5,7 @@
     <img src="./public/logo.png" alt="logo" width="700"  height="auto" />
   <br/>
   <h3><b>The Bookstore</b></h3>
-
 </div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
